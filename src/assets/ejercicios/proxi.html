@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Proxy</title>
+  </head>
+
+  <body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <script src="https://unpkg.com/fast-levenshtein@2.0.6/levenshtein.js"></script>
+    <script>
+  const target = {
+  green: 'Verde',
+  red: 'Rojo',
+  blue: 'Azul',
+}
+
+const handler = {
+  get(obj, prop) {
+    if (prop in obj) {
+      return obj[prop]
+    }
+    const suggestions = []
+    for (const key in obj) {
+      if (Levenshtein.get(key, prop) <= 3) {
+        suggestions.push(key)
+      }
+    }
+    if (suggestions.length) {
+      console.log(
+        `${prop} no se encuentra. Quisiste decir alguna de las siguientes opciones?`
+      )
+      suggestions.forEach((suggestion) => {
+        console.log(suggestion)
+      })
+    } else {
+      console.log(
+        `${prop} no se encuentra y no tengo sugerencias para ofrecer.`
+      )
+    }
+    return obj[prop]
+  },
+}
+
+const p = new Proxy(target, handler)
+    </script>
+  </body>
+</html>

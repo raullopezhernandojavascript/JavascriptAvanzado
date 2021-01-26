@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia Prototipal (Prototype)</title>
+</head>
+
+<body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+    <ul>
+  
+
+    <script>
+ 
+
+    function Hero (name) {
+        // const hero = Object.create(Hero.prototype);
+        this.name = name;
+        // return this;
+    }
+
+    Hero.prototype.saludar = function(){
+        console.log(`New: ${this.name}`)
+    }
+
+    const zelda = new Hero('Zelda');
+    console.log(`Name : ${zelda.name}`);
+    console.log(`Saludar : ${zelda.saludar}`)
+    console.log(`toString : ${zelda.toString}`)
+    // Aqui le preguntamos si el nombre pertenece a Zelda y nos responde true
+    console.log(`zelda.hasOwnProperty : ${zelda.hasOwnProperty('name')}`)
+    console.log(`zelda.hasOwnProperty : ${zelda.hasOwnProperty('saludar')}`)
+
+
+
+    
+    </script>
+</body>
+
+</html>

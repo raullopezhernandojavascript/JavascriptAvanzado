@@ -14,6 +14,12 @@ const player = new MediaPlayer({
   plugins: [new Autoplay(),new AutoPause]
 });
 
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(error =>{
+    console.log(error.message);
+  })
+}
+
 const button = document.querySelector('#playPause');
 const muteUnmute = document.querySelector('#unmuteMute');
 button.onclick = () => player.togglePlay();

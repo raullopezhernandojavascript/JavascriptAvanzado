@@ -3,9 +3,9 @@
 // A su vez en "MediaPlayer.js" habra que expotar el modulo haciendo al final
 // del archivo un "export default MediaPlayer"
 
-import MediaPlayer from './MediaPlayer.js'
-import Autoplay from './plugins/AutoPlay.js'
-import AutoPause from './plugins/AutoPause.js'
+import MediaPlayer from './MediaPlayer'
+import Autoplay from "./plugins/AutoPlay";
+import AutoPause from './plugins/AutoPause'
 
 
 const video = document.querySelector('video');
@@ -15,7 +15,7 @@ const player = new MediaPlayer({
 });
 
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js').catch(error =>{
+  navigator.serviceWorker.register('../sw.js').catch(error =>{
     console.log(error.message);
   })
 }

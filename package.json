@@ -1,16 +1,23 @@
 {
-  "name":  "platzi-media-player",
-  "version":  "1.0.0",
-  "description":  "Proyecto del Curso Profesional de JavaScript de la Escuela de JavaScript de Platzi.",
-  "license":  "MIT",
-  "author":  "Raul Lopez Hernando <raullopezhernando@gmail.com>",
-  "keywords":  [
-   "javascript"
-   ],
-  "scripts":  {
-   "start":  "live-server"
-   },
-  "devDependencies":  {
-       "live-server":  "^1.2.1"
-     }
-  }
+  "name": "platzi-media-player",
+  "version": "1.0.0",
+  "description": "Proyecto del Curso Profesional de JavaScript de la Escuela de JavaScript de Platzi.",
+  "license": "MIT",
+  "author": "Raul Lopez Hernando <raullopezhernando@gmail.com>",
+  "keywords": [
+    "javascript"
+  ],
+  "scripts": {
+    "start": "parcel index.html  /src/assets/ejercicios/typescript/*.ts /src/assets/ejercicios/**/*.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3"
+  },
+  "browserlist": [
+    "last 1 Chrome version"
+  ]
+}

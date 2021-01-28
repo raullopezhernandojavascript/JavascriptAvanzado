@@ -6,12 +6,13 @@
 import MediaPlayer from './MediaPlayer'
 import Autoplay from "./plugins/AutoPlay";
 import AutoPause from './plugins/AutoPause'
+import Ads from './plugins/Ads'
 
 
 const video = document.querySelector('video');
 const player = new MediaPlayer({
   el: video,
-  plugins: [new Autoplay(),new AutoPause]
+  plugins: [new Autoplay(),new AutoPause(),new Ads()]
 });
 
 if('serviceWorker' in navigator){
